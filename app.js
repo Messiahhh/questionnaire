@@ -78,7 +78,7 @@ router
 
     .post('/getTeam', async (ctx, next) => {
         let num = ctx.request.body.num
-        let data = await conn.queryAsync(`SELECT type FROM student where stuNum = ${num}`)
+        let data = await conn.queryAsync(`SELECT type FROM student where stuNum = '${num}'`)
         if (data.length === 0) {
             ctx.body = {
                 status: -400,
@@ -97,7 +97,7 @@ router
     .post('/sign', async (ctx, next) => {
         let num = ctx.request.body.num
         let sfz = ctx.request.body.sfz
-        let data = await conn.queryAsync(`SELECT * FROM student WHERE stuNum = ${num} and idNum = ${sfz}`)
+        let data = await conn.queryAsync(`SELECT * FROM student WHERE stuNum = '${num}' and idNum = '${sfz}'`)
         if (data.length === 0) {
             ctx.body = {
                 status: -400
@@ -118,11 +118,11 @@ router
             let one = JSON.parse(comments.one)
             let two = JSON.parse(comments.two)
             if (one.levelOne && two.levelOne) {
-                let data1 = await conn.queryAsync(`SELECT * FROM classcomment WHERE stuNum = ${num} AND classId = 1`)
+                let data1 = await conn.queryAsync(`SELECT * FROM classcomment WHERE stuNum = '${num}' AND classId = 1`)
                 if (!data1[0]) {
                     await conn.queryAsync(`INSERT INTO classcomment values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, [null, num, 1, one.levelOne, one.levelTwo, one.levelThree, one.levelFour, one.levelFive, one.levelSix, one.suggestion])
                 }
-                let data2 = await conn.queryAsync(`SELECT * FROM classcomment WHERE stuNum = ${num} AND classId = 2`)
+                let data2 = await conn.queryAsync(`SELECT * FROM classcomment WHERE stuNum = '${num}' AND classId = 2`)
                 if (!data2[0]) {
                     await conn.queryAsync(`INSERT INTO classcomment values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, [null, num, 2, two.levelOne, two.levelTwo, two.levelThree, two.levelFour, two.levelFive, two.levelSix, two.suggestion])
                 }
