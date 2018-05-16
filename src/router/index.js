@@ -58,21 +58,21 @@ Router.beforeEach((to, from, next) => {
             next()
         }
         else {
-            axios.get('/verify').then((res) => {
+            axios.get('./verify').then((res) => {
                 // 如果有学号，则跳转到业务页面
                 // 因为学生有两种，可以加storage，跳转的时候根据标识来看去哪个
                 let data = res.data.data
                 let hasCode = data.info
                 if (hasCode) {
                     let num = data.stuId
-                    axios.post('/hasSubmit', {
+                    axios.post('./hasSubmit', {
                         num
                     }).then(res => {
                         if (res.data.status === 200) {
                             this.$router.push('/finish')
                         }
                         else {
-                            axios.post('/getTeam', {
+                            axios.post('./getTeam', {
                                 num
                             }).then(data => {
                                 if (data.data.status === -400) {

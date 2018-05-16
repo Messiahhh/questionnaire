@@ -98,20 +98,19 @@ router
         let num = ctx.request.body.num
         let sfz = ctx.request.body.sfz
         let data = await conn.queryAsync(`SELECT * FROM student WHERE stuNum = ${num} and idNum = ${sfz}`)
-        let type = data[0].type === '入党积极分子培训班' ? 2 : 3
-        if (data[0].id) {
+        if (data.length === 0) {
+            ctx.body = {
+                status: -400
+            }
+        }
+        else {
+            let type = data[0].type === '入党积极分子培训班' ? 2 : 3
             ctx.body = {
                 status: 200,
                 type: type,
             }
         }
-        else {
-            ctx.body = {
-                status: -400
-            }
-        }
-
-    })
+        })
 
     .post('/submit', async (ctx, next) => {
         let {num, flag, comments} = ctx.request.body

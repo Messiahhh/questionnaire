@@ -19,7 +19,7 @@ export default {
 
     methods: {
         sign() {
-            axios.post('/sign', {
+            axios.post('./sign', {
                 num: this.num,
                 sfz: this.sfz,
             }).then(res => {
@@ -27,7 +27,7 @@ export default {
                     sessionStorage.setItem('num', this.num)
                     sessionStorage.setItem('flag', res.data.type)
                     sessionStorage.setItem('yjs', true)
-                    axios.post('/hasSubmit', {
+                    axios.post('./hasSubmit', {
                         num: this.num
                     }).then(res => {
                         if (res.data.status === 200) {
@@ -41,7 +41,7 @@ export default {
 
                 }
                 else {
-                    window.reload()
+                    location.reload()
                 }
             })
         }
