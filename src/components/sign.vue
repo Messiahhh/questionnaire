@@ -9,6 +9,7 @@
 
 <script>
 import axios from 'axios'
+import { MessageBox } from 'mint-ui';
 export default {
     data() {
         return {
@@ -19,31 +20,33 @@ export default {
 
     methods: {
         sign() {
-            axios.post('./sign', {
-                num: this.num,
-                sfz: this.sfz,
-            }).then(res => {
-                if (res.data.status === 200) {
-                    sessionStorage.setItem('num', this.num)
-                    sessionStorage.setItem('flag', res.data.type)
-                    sessionStorage.setItem('yjs', true)
-                    axios.post('./hasSubmit', {
-                        num: this.num
-                    }).then(res => {
-                        if (res.data.status === 200) {
-                            this.$router.push('/finish')
-                        }
-                        else {
-                            this.$router.push({path: '/'})
-                        }
-                    })
+            if (this.num !== '' && this.sfz !== '') {
+                axios.post('./sign', {
+                    num: this.num,
+                    sfz: this.sfz,
+                }).then(res => {
+                    if (res.data.status === 200) {
+                        sessionStorage.setItem('num', this.num)
+                        sessionStorage.setItem('flag', res.data.type)
+                        sessionStorage.setItem('yjs', true)
+                        axios.post('./hasSubmit', {
+                            num: this.num
+                        }).then(res => {
+                            if (res.data.status === 200) {
+                                this.$router.push('/finish')
+                            }
+                            else {
+                                this.$router.push({path: '/'})
+                            }
+                        })
 
 
-                }
-                else {
-                    location.reload()
-                }
-            })
+                    }
+                    else {
+                        MessageBox.alert('提示', '密码错误或你不能投问卷');
+                    }
+                })
+            }
         }
     },
 
