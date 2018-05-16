@@ -270,11 +270,5 @@ export default {
         align-items center
         div
             width 100%
-    .mint-msgbox
-        width 80%
-        height 18vh
-        div
-        button
-            font-size 6vw
-            margin-bottom 2vh
+
 </style>

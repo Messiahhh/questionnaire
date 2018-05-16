@@ -202,14 +202,6 @@ export default {
 </script>
 
 <style lang="stylus">
-    .mint-msgbox
-        width 80%
-        height 18vh
-        div
-        button
-            font-size 6vw
-            margin-bottom 2vh
-
 
     .container
         padding 4vh 4vw
