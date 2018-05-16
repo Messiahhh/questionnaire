@@ -31,6 +31,9 @@ app.use(serve(path.join(__dirname, 'dist')))
 app.use(koaBody({multipart: true}))
 
 router
+    .get('/test', async (ctx, next) => {
+        console.log(ctx.request.url);
+    })
     .get('/', async (ctx, next) => {
         let openid = ctx.cookies.get('openid')
         if (!openid) {
@@ -40,7 +43,7 @@ router
             else {
                 openid = qs.parse(ctx.request.querystring).openid
                 if (!openid) {
-                    ctx.redirect(`${apiurl}${ctx.request.url}`)
+                    ctx.redirect(`${apiurl}${encodeURI('https://wx.idsbllp.cn/nodejs/questionnaire')}`)
                 }
             }
             ctx.cookies.set('openid', openid, {
