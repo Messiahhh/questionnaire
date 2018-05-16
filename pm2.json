@@ -1,0 +1,16 @@
+{
+    "name": "问卷",
+    "script": "./app.js",
+    "cwd":"~/node/wenjuan",
+    "watch":[
+    ],
+    "ignore_watch" : [
+        "node_modules",
+    ],
+    "watch_options": {
+      "followSymlinks": false
+    },
+    "exec_mode" : "fork",
+    "env": "production",
+    "max_memory_restart": "1G"
+}
