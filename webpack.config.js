@@ -57,7 +57,7 @@ module.exports = {
   },
   devServer: {
      proxy: {
-          '!/favicon.ico': 'http://localhost:3000',
+          '!/favicon.ico': 'http://localhost:8081',
      },
     historyApiFallback: true,
     noInfo: true,
