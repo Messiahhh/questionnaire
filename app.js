@@ -19,7 +19,7 @@ conn.connect()
 let apiurl = "https://wx.idsbllp.cn/MagicLoop/index.php?s=/addon/Api/Api/oauth&redirect="
 
 let debug = {
-    mode: false,
+    mode: true,
     openid: 'ouRCyjjn66OCs-aXwBVJ50bBG1sA',
 }
 
