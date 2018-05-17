@@ -15,6 +15,7 @@ export default {
         if (flag === 2) {
             one = sessionStorage.getItem('one')
             two = sessionStorage.getItem('two')
+            console.log(one ,two);
             if (one && two) {
                 axios.post('/submit', {
                     num,
@@ -33,6 +34,7 @@ export default {
             three = sessionStorage.getItem('three')
             four = sessionStorage.getItem('four')
             five = sessionStorage.getItem('five')
+            console.log(three, four, five);
             if (three && four && five) {
                 axios.post('/submit', {
                     num,
