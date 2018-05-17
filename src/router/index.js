@@ -69,7 +69,8 @@ Router.beforeEach((to, from, next) => {
                         num
                     }).then(res => {
                         if (res.data.status === 200) {
-                            this.$router.push('/finish')
+                            sessionStorage.setItem('yjs', true)
+                            next('/finish')
                         }
                         else {
                             axios.post('./getTeam', {
