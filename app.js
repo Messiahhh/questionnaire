@@ -69,7 +69,6 @@ router
         let res = await axios.post(wxurl,
             `token=${token}&timestamp=${timestamp}&string=${string}&secret=${secret}&openid=${openid}`
         )
-            // "token=gh_68f0a1ffc303&timestamp=1526375631&string=hello&secret=98f83a510686d27be5da70073b3a6c779c7bfea8&secret=98f83a510686d27be5da70073b3a6c779c7bfea8&secret:=98f83a510686d27be5da70073b3a6c779c7bfea8&openid=ouRCyjndQXTkjgtAuzUG4F3MZNa8")
         ctx.body = {
             status: 200,
             data: res.data
@@ -97,7 +96,7 @@ router
     .post('/sign', async (ctx, next) => {
         let num = ctx.request.body.num
         let sfz = ctx.request.body.sfz
-        let data = await conn.queryAsync(`SELECT * FROM student WHERE stuNum = '${num}' and idNum = '${sfz}'`)
+        let data = await conn.queryAsync(`SELECT * FROM student WHERE lower(stuNum) = lower('${num}') and lower(idNum) = lower('${sfz}')`)
         if (data.length === 0) {
             ctx.body = {
                 status: -400
@@ -133,15 +132,15 @@ router
             let four = JSON.parse(comments.four)
             let five = JSON.parse(comments.five)
             if (three.levelOne && four.levelOne && five.levelOne) {
-                let data3 = await conn.queryAsync(`SELECT * FROM classcomment WHERE stuNum = ${num} AND classId = 3`)
+                let data3 = await conn.queryAsync(`SELECT * FROM classcomment WHERE lower(stuNum) = lower('${num}') AND classId = 3`)
                 if (!data3[0]) {
                     await conn.queryAsync(`INSERT INTO classcomment values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, [null, num, 3, three.levelOne, three.levelTwo, three.levelThree, three.levelFour, three.levelFive, three.levelSix, three.suggestion])
                 }
-                let data4 = await conn.queryAsync(`SELECT * FROM classcomment WHERE stuNum = ${num} AND classId = 4`)
+                let data4 = await conn.queryAsync(`SELECT * FROM classcomment WHERE lower(stuNum) = lower('${num}') AND classId = 4`)
                 if (!data4[0]) {
                     await conn.queryAsync(`INSERT INTO classcomment values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, [null, num, 4, four.levelOne, four.levelTwo, four.levelThree, four.levelFour, four.levelFive, four.levelSix, four.suggestion])
                 }
-                let data5 = await conn.queryAsync(`SELECT * FROM classcomment WHERE stuNum = ${num} AND classId = 5`)
+                let data5 = await conn.queryAsync(`SELECT * FROM classcomment WHERE lower(stuNum) = lower('${num}') AND classId = 5`)
                 if (!data5[0]) {
                     await conn.queryAsync(`INSERT INTO classcomment values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, [null, num, 5, five.levelOne, five.levelTwo, five.levelThree, five.levelFour, five.levelFive, five.levelSix, five.suggestion])
                 }
@@ -154,7 +153,7 @@ router
 
     .post('/hasSubmit', async (ctx, next) => {
         let num = ctx.request.body.num
-        let data = await conn.queryAsync(`SELECT * FROM classcomment WHERE stuNum = ${num}`)
+        let data = await conn.queryAsync(`SELECT * FROM classcomment WHERE lower(stuNum) = lower('${num}')`)
         if (data.length > 0) {
             ctx.body = {
                 status: 200,
