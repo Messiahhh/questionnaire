@@ -21,6 +21,7 @@
 
             </mt-progress>
         </footer>
+
     </div>
 </template>
 
@@ -54,6 +55,15 @@ export default {
         background #2672FF
         font-size 8vw
         color #fff
+        &::before
+            content ''
+            position absolute
+            width 40px
+            height 40px
+            left 10px
+            top 10px
+            background url('../assets/danghui.jpg') no-repeat
+            background-size cover
     .main
         padding 4vh 3vh 2vh
         .first-p
