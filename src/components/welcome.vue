@@ -60,8 +60,8 @@ export default {
             position absolute
             width 40px
             height 40px
-            left 10px
-            top 10px
+            left 3px
+            top 3px
             background url('../assets/danghui.jpg') no-repeat
             background-size cover
     .main

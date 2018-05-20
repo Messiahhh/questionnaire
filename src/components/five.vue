@@ -12,47 +12,44 @@
                 <p>授课态度（讲述认真，教态端庄，举止得体，授课设计精心，富于启发性）</p>
                 <p class='tips'>从左到右依次代表（差、一般、较好、好）</p>
                 <div class="stars">
-                    <div class="star star1" data-level-one='1' @click='clickStarOne' :style="{'--x': 1 <= levelOne ? `\'√\'`: ''}">
+                    <div class="star star1" data-level-one='1' @click='clickStarOne' :style="{'--x': 1 == levelOne ? `\'√\'`: ''}">
                         <div>差</div>
                     </div>
-                    <div class="star star2" data-level-one='2' @click='clickStarOne' :style="{'--x': 2 <= levelOne ? `\'√\'` : ''}">
+                    <div class="star star2" data-level-one='2' @click='clickStarOne' :style="{'--x': 2 == levelOne ? `\'√\'` : ''}">
                         <div class="">
                             一般
                         </div>
                     </div>
-                    <div class="star star3" data-level-one='3' @click='clickStarOne' :style="{'--x': 3 <= levelOne ? `\'√\'` : ''}">
+                    <div class="star star3" data-level-one='3' @click='clickStarOne' :style="{'--x': 3 == levelOne ? `\'√\'` : ''}">
                         <div class="">
                             较好
                         </div>
                     </div>
-                    <div class="star star4" data-level-one='4' @click='clickStarOne' :style="{'--x': 4 <= levelOne ? `\'√\'` : ''}">
+                    <div class="star star4" data-level-one='4' @click='clickStarOne' :style="{'--x': 4 == levelOne ? `\'√\'` : ''}">
                         <div class="">
                             好
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
             <div class="first">
                 <p>理论观点（观点正确、条理分明、要点突出、逻辑性强，夯实理论基础，学有所获）</p>
                 <p class='tips'>从左到右依次代表（差、一般、较好、好）</p>
                 <div class="stars">
-                    <div class="star star1" data-level-two='1' @click='clickStarTwo' :style="{'--x': 1 <= levelTwo ? `\'√\'`: ''}">
+                    <div class="star star1" data-level-two='1' @click='clickStarTwo' :style="{'--x': 1 == levelTwo ? `\'√\'`: ''}">
                         <div>差</div>
                     </div>
-                    <div class="star star2" data-level-two='2' @click='clickStarTwo' :style="{'--x': 2 <= levelTwo ? `\'√\'` : ''}">
+                    <div class="star star2" data-level-two='2' @click='clickStarTwo' :style="{'--x': 2 == levelTwo ? `\'√\'` : ''}">
                         <div class="">
                             一般
                         </div>
                     </div>
-                    <div class="star star3" data-level-two='3' @click='clickStarTwo' :style="{'--x': 3 <= levelTwo ? `\'√\'` : ''}">
+                    <div class="star star3" data-level-two='3' @click='clickStarTwo' :style="{'--x': 3 == levelTwo ? `\'√\'` : ''}">
                         <div class="">
                             较好
                         </div>
                     </div>
-                    <div class="star star4" data-level-two='4' @click='clickStarTwo' :style="{'--x': 4 <= levelTwo ? `\'√\'` : ''}">
+                    <div class="star star4" data-level-two='4' @click='clickStarTwo' :style="{'--x': 4 == levelTwo ? `\'√\'` : ''}">
                         <div class="">
                             好
                         </div>
@@ -63,20 +60,20 @@
                 <p>联系实际（理论联系实际、能结合最新形势与要求、针对性强）</p>
                 <p class='tips'>从左到右依次代表（差、一般、较好、好）</p>
                 <div class="stars">
-                    <div class="star star1" data-level-three='1' @click='clickStarThree' :style="{'--x': 1 <= levelThree ? `\'√\'`: ''}">
+                    <div class="star star1" data-level-three='1' @click='clickStarThree' :style="{'--x': 1 == levelThree ? `\'√\'`: ''}">
                         <div>差</div>
                     </div>
-                    <div class="star star2" data-level-three='2' @click='clickStarThree' :style="{'--x': 2 <= levelThree ? `\'√\'` : ''}">
+                    <div class="star star2" data-level-three='2' @click='clickStarThree' :style="{'--x': 2 == levelThree ? `\'√\'` : ''}">
                         <div class="">
                             一般
                         </div>
                     </div>
-                    <div class="star star3" data-level-three='3' @click='clickStarThree' :style="{'--x': 3 <= levelThree ? `\'√\'` : ''}">
+                    <div class="star star3" data-level-three='3' @click='clickStarThree' :style="{'--x': 3 == levelThree ? `\'√\'` : ''}">
                         <div class="">
                             较好
                         </div>
                     </div>
-                    <div class="star star4" data-level-three='4' @click='clickStarThree' :style="{'--x': 4 <= levelThree ? `\'√\'` : ''}">
+                    <div class="star star4" data-level-three='4' @click='clickStarThree' :style="{'--x': 4 == levelThree ? `\'√\'` : ''}">
                         <div class="">
                             好
                         </div>
@@ -87,20 +84,20 @@
                 <p>语言表达（语言生动、表达流畅，对授课内容熟悉）</p>
                 <p class='tips'>从左到右依次代表（差、一般、较好、好）</p>
                 <div class="stars">
-                    <div class="star star1" data-level-four='1' @click='clickStarFour' :style="{'--x': 1 <= levelFour ? `\'√\'`: ''}">
+                    <div class="star star1" data-level-four='1' @click='clickStarFour' :style="{'--x': 1 == levelFour ? `\'√\'`: ''}">
                         <div>差</div>
                     </div>
-                    <div class="star star2" data-level-four='2' @click='clickStarFour' :style="{'--x': 2 <= levelFour ? `\'√\'` : ''}">
+                    <div class="star star2" data-level-four='2' @click='clickStarFour' :style="{'--x': 2 == levelFour ? `\'√\'` : ''}">
                         <div class="">
                             一般
                         </div>
                     </div>
-                    <div class="star star3" data-level-four='3' @click='clickStarFour' :style="{'--x': 3 <= levelFour ? `\'√\'` : ''}">
+                    <div class="star star3" data-level-four='3' @click='clickStarFour' :style="{'--x': 3 == levelFour ? `\'√\'` : ''}">
                         <div class="">
                             较好
                         </div>
                     </div>
-                    <div class="star star4" data-level-four='4' @click='clickStarFour' :style="{'--x': 4 <= levelFour ? `\'√\'` : ''}">
+                    <div class="star star4" data-level-four='4' @click='clickStarFour' :style="{'--x': 4 == levelFour ? `\'√\'` : ''}">
                         <div class="">
                             好
                         </div>
@@ -111,20 +108,20 @@
                 <p>方法艺术（教学方法灵活，注重教学方法创新，有较强的课堂组织能力）</p>
                 <p class='tips'>从左到右依次代表（差、一般、较好、好）</p>
                 <div class="stars">
-                    <div class="star star1" data-level-five='1' @click='clickStarFive' :style="{'--x': 1 <= levelFive ? `\'√\'`: ''}">
+                    <div class="star star1" data-level-five='1' @click='clickStarFive' :style="{'--x': 1 == levelFive ? `\'√\'`: ''}">
                         <div>差</div>
                     </div>
-                    <div class="star star2" data-level-five='2' @click='clickStarFive' :style="{'--x': 2 <= levelFive ? `\'√\'` : ''}">
+                    <div class="star star2" data-level-five='2' @click='clickStarFive' :style="{'--x': 2 == levelFive ? `\'√\'` : ''}">
                         <div class="">
                             一般
                         </div>
                     </div>
-                    <div class="star star3" data-level-five='3' @click='clickStarFive' :style="{'--x': 3 <= levelFive ? `\'√\'` : ''}">
+                    <div class="star star3" data-level-five='3' @click='clickStarFive' :style="{'--x': 3 == levelFive ? `\'√\'` : ''}">
                         <div class="">
                             较好
                         </div>
                     </div>
-                    <div class="star star4" data-level-five='4' @click='clickStarFive' :style="{'--x': 4 <= levelFive ? `\'√\'` : ''}">
+                    <div class="star star4" data-level-five='4' @click='clickStarFive' :style="{'--x': 4 == levelFive ? `\'√\'` : ''}">
                         <div class="">
                             好
                         </div>
@@ -135,20 +132,20 @@
                 <p>课件制作（课件制作精美，紧扣主题，图文并茂，生动形象）</p>
                 <p class='tips'>从左到右依次代表（差、一般、较好、好）</p>
                 <div class="stars">
-                    <div class="star star1" data-level-six='1' @click='clickStarSix' :style="{'--x': 1 <= levelSix ? `\'√\'`: ''}">
+                    <div class="star star1" data-level-six='1' @click='clickStarSix' :style="{'--x': 1 == levelSix ? `\'√\'`: ''}">
                         <div>差</div>
                     </div>
-                    <div class="star star2" data-level-six='2' @click='clickStarSix' :style="{'--x': 2 <= levelSix ? `\'√\'` : ''}">
+                    <div class="star star2" data-level-six='2' @click='clickStarSix' :style="{'--x': 2 == levelSix ? `\'√\'` : ''}">
                         <div class="">
                             一般
                         </div>
                     </div>
-                    <div class="star star3" data-level-six='3' @click='clickStarSix' :style="{'--x': 3 <= levelSix ? `\'√\'` : ''}">
+                    <div class="star star3" data-level-six='3' @click='clickStarSix' :style="{'--x': 3 == levelSix ? `\'√\'` : ''}">
                         <div class="">
                             较好
                         </div>
                     </div>
-                    <div class="star star4" data-level-six='4' @click='clickStarSix' :style="{'--x': 4 <= levelSix ? `\'√\'` : ''}">
+                    <div class="star star4" data-level-six='4' @click='clickStarSix' :style="{'--x': 4 == levelSix ? `\'√\'` : ''}">
                         <div class="">
                             好
                         </div>
@@ -281,7 +278,7 @@ export default {
                     transition all .3s
                     position relative
                     div
-                        font-size 3vw
+                        font-size 2vw
                         position absolute
                         top 50%
                         left 50%
