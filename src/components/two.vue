@@ -279,9 +279,9 @@ export default {
                     div
                         font-size 2vw
                         position absolute
-                        top 50%
+                        top 65%
                         left 50%
-                        transform translate(-50%, 200%)
+                        transform translate(-50%, 50%)
                     &::after
                         content var(--x)
                         position absolute
