@@ -1,7 +1,9 @@
 <template lang="html">
     <div class="">
         <header>
-            分党校授课教师课堂教学情况摸底调查问卷
+            <div class="">
+                分党校授课教师课堂教学情况摸底调查问卷
+            </div>
         </header>
         <div class="main">
             <div class="first-p">
@@ -50,18 +52,20 @@ export default {
 
 <style lang="stylus">
     header
-        height 22vh
-        padding 6vh 4vh 3vh
+        height 20vh
+        padding 5vh 3vh 3vh
         background #2672FF
-        font-size 8vw
+        font-size 7vw
         color #fff
+        div
+            margin-left 14vw
         &::before
             content ''
             position absolute
             width 40px
             height 40px
-            left 3px
-            top 3px
+            left 5vw
+            top 12vw
             background url('../assets/danghui.jpg') no-repeat
             background-size cover
     .main

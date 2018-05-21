@@ -9,7 +9,6 @@
             </div>
             <div class="first">
                 <p>授课态度（讲述认真，教态端庄，举止得体，授课设计精心，富于启发性）</p>
-                <p class='tips'>从左到右依次代表（差、一般、较好、好）</p>
                 <div class="stars">
                     <div class="star star1" data-level-one='1' @click='clickStarOne' :style="{'--x': 1 == levelOne ? `\'√\'`: ''}">
                         <div>差</div>
@@ -33,7 +32,6 @@
             </div>
             <div class="first">
                 <p>理论观点（观点正确、条理分明、要点突出、逻辑性强，夯实理论基础，学有所获）</p>
-                <p class='tips'>从左到右依次代表（差、一般、较好、好）</p>
                 <div class="stars">
                     <div class="star star1" data-level-two='1' @click='clickStarTwo' :style="{'--x': 1 == levelTwo ? `\'√\'`: ''}">
                         <div>差</div>
@@ -57,7 +55,6 @@
             </div>
             <div class="first">
                 <p>联系实际（理论联系实际、能结合最新形势与要求、针对性强）</p>
-                <p class='tips'>从左到右依次代表（差、一般、较好、好）</p>
                 <div class="stars">
                     <div class="star star1" data-level-three='1' @click='clickStarThree' :style="{'--x': 1 == levelThree ? `\'√\'`: ''}">
                         <div>差</div>
@@ -81,7 +78,6 @@
             </div>
             <div class="first">
                 <p>语言表达（语言生动、表达流畅，对授课内容熟悉）</p>
-                <p class='tips'>从左到右依次代表（差、一般、较好、好）</p>
                 <div class="stars">
                     <div class="star star1" data-level-four='1' @click='clickStarFour' :style="{'--x': 1 == levelFour ? `\'√\'`: ''}">
                         <div>差</div>
@@ -105,7 +101,6 @@
             </div>
             <div class="first">
                 <p>方法艺术（教学方法灵活，注重教学方法创新，有较强的课堂组织能力）</p>
-                <p class='tips'>从左到右依次代表（差、一般、较好、好）</p>
                 <div class="stars">
                     <div class="star star1" data-level-five='1' @click='clickStarFive' :style="{'--x': 1 == levelFive ? `\'√\'`: ''}">
                         <div>差</div>
@@ -129,7 +124,6 @@
             </div>
             <div class="first">
                 <p>课件制作（课件制作精美，紧扣主题，图文并茂，生动形象）</p>
-                <p class='tips'>从左到右依次代表（差、一般、较好、好）</p>
                 <div class="stars">
                     <div class="star star1" data-level-six='1' @click='clickStarSix' :style="{'--x': 1 == levelSix ? `\'√\'`: ''}">
                         <div>差</div>
@@ -279,9 +273,9 @@ export default {
                     div
                         font-size 2vw
                         position absolute
-                        top 65%
+                        top 120%
                         left 50%
-                        transform translate(-50%, 50%)
+                        transform translate(-50%, -50%)
                     &::after
                         content var(--x)
                         position absolute
