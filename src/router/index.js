@@ -9,6 +9,7 @@ import four from '../components/four'
 import five from '../components/five'
 import finish from '../components/finish'
 import sign from '../components/sign'
+import advice from '../components/advice'
 import axios from 'axios'
 import qs from 'querystring'
 let Router = new VueRouter({
@@ -44,6 +45,10 @@ let Router = new VueRouter({
         {
             path: '/sign',
             component: sign,
+        },
+        {
+            path: '/advice',
+            component: advice,
         }
     ],
     scrollBehavior (to, from, savedPosition) {

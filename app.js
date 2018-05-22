@@ -112,7 +112,7 @@ router
         })
 
     .post('/submit', async (ctx, next) => {
-        let {num, flag, comments} = ctx.request.body
+        let {num, flag, comments, advice} = ctx.request.body
         if (flag === 2) {
             let one = JSON.parse(comments.one)
             let two = JSON.parse(comments.two)
@@ -125,6 +125,7 @@ router
                 if (!data2[0]) {
                     await conn.queryAsync(`INSERT INTO classcomment values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, [null, num, 2, two.levelOne, two.levelTwo, two.levelThree, two.levelFour, two.levelFive, two.levelSix, two.suggestion])
                 }
+                await conn.queryAsync(`UPDATE student SET advice = '${advice}' WHERE stuNum = '${num}'`)
             }
         }
         else {
@@ -144,6 +145,7 @@ router
                 if (!data5[0]) {
                     await conn.queryAsync(`INSERT INTO classcomment values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, [null, num, 5, five.levelOne, five.levelTwo, five.levelThree, five.levelFour, five.levelFive, five.levelSix, five.suggestion])
                 }
+                await conn.queryAsync(`UPDATE student SET advice = '${advice}' WHERE stuNum = '${num}'`)
             }
         }
         ctx.body = {

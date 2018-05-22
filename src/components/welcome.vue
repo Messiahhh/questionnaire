@@ -2,7 +2,7 @@
     <div class="">
         <header>
             <div class="">
-                分党校授课教师课堂教学情况摸底调查问卷
+                分党校课堂教学情况调查问卷
             </div>
         </header>
         <div class="main">
